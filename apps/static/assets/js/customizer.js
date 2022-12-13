@@ -1,5 +1,6 @@
 'use strict';
 checkCookie();
+
 if (dark_layout == 'true') {
   layout_change('dark');
 } else {
