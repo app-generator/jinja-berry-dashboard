@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.0.0] 2020-12-13
+### Changes
+
+- STABLE_version
+
 ## [0.0.3] 2020-12-13
 ### Changes
 
