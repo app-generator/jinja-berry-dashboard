@@ -1,5 +1,4 @@
 {% extends 'layouts/base.html' %}
-{% load static %}
 
 {% block title %} Dashboard {% endblock title %}
 {% block content %}
@@ -275,7 +274,7 @@
 
 {% block extra_js %}
   <!-- Apex Chart -->
-  <script src="{% static 'assets/js/plugins/apexcharts.min.js' %}"></script>
-  <script src="{% static 'assets/js/pages/dashboard-default.js' %}"></script>
+  <script src="{{ url_for('static', filename='assets/js/plugins/apexcharts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/pages/dashboard-default.js') }}"></script>
   <!-- [Page Specific JS] end -->
 {% endblock extra_js %}

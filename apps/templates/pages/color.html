@@ -1,5 +1,4 @@
 {% extends 'layouts/base.html' %}
-{% load static %}
 
 {% block title %} Color {% endblock title %} 
 
@@ -337,7 +336,7 @@
   {% endblock content %}
 
 {% block extra_js %}
-  <script src="{% static 'assets/js/plugins/clipboard.min.js' %}"></script>
+  <script src="{{ url_for('static', filename='assets/js/plugins/clipboard.min.js') }}"></script>
   <script>
     window.addEventListener('load', (event) => {
       var i_clip = new ClipboardJS('.color-block');

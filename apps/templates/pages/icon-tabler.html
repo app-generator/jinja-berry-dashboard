@@ -1,5 +1,4 @@
 {% extends 'layouts/base.html' %}
-{% load static %}
 
 {% block title %} Tabler Icons Set {% endblock title %}
 
@@ -29,7 +28,7 @@
 
 {% block extra_js %}
   <!-- [Page Specific JS] start -->
-  <script src="{% static 'assets/js/plugins/clipboard.min.js' %}"></script>
+  <script src="{{ url_for('static', filename='assets/js/plugins/clipboard.min.js') }}"></script>
   <script type="text/javascript">
     var icon_list = [
       'ti-2fa',
