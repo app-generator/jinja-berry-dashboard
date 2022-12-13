@@ -1,14 +1,9 @@
-{% load static %}
 <!-- [ Header Topbar ] start -->
 <header class="pc-header">
   <div class="m-header">
-    {% if request.user.is_superuser %}
-      <a href="{% url 'admin:index' %}" class="b-brand">
-    {% else %}
-      <a href="/" class="pc-link">
-    {% endif %}
+    <a href="/" class="pc-link">
       <!-- ========   change your logo hear   ============ -->
-      <img src="{% static 'assets/images/logo-dark.svg' %}" alt="" class="logo logo-lg" />
+      <img src="{{ url_for('static', filename='assets/images/logo-dark.svg') }}" alt="" class="logo logo-lg" />
     </a>
     <!-- ======= Menu collapse Icon ===== -->
     <div class="pc-h-item">
@@ -83,7 +78,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="user-image" class="user-avtar" />
+                  <img src="{{ url_for('static', filename='assets/images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar" />
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">2 min ago</span>
@@ -123,7 +118,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="{% static 'assets/images/user/avatar-1.jpg' %}" alt="user-image" class="user-avtar" />
+                  <img src="{{ url_for('static', filename='assets/images/user/avatar-1.jpg') }}" alt="user-image" class="user-avtar" />
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">8 min ago</span>
@@ -139,7 +134,7 @@
             <a class="list-group-item list-group-item-action">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="{% static 'assets/images/user/avatar-3.jpg' %}" alt="user-image" class="user-avtar" />
+                  <img src="{{ url_for('static', filename='assets/images/user/avatar-3.jpg') }}" alt="user-image" class="user-avtar" />
                 </div>
                 <div class="flex-grow-1 ms-1">
                   <span class="float-end text-muted">10 min ago</span>
@@ -161,7 +156,7 @@
     <li class="dropdown pc-h-item header-user-profile">
       <a class="pc-head-link head-link-primary dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#"
         role="button" aria-haspopup="false" aria-expanded="false">
-        <img src="{% static 'assets/images/user/avatar-2.jpg' %}" alt="user-image" class="user-avtar" />
+        <img src="{{ url_for('static', filename='assets/images/user/avatar-2.jpg') }}" alt="user-image" class="user-avtar" />
         <span>
           <i class="ti ti-settings"></i>
         </span>
@@ -202,16 +197,14 @@
               <i class="ti ti-user"></i>
               <span>Social Profile</span>
             </a>
-            {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-                <a href="{% url 'admin:logout' %}" class="dropdown-item">
-              {% else %}
-                <a href="{% url 'logout' %}" class="dropdown-item">
-              {% endif %}
+            <a href="{{ url_for('password_change') }}" class="dropdown-item">
+              <i class="ti ti-key"></i>
+              <span>Change Password</span>
+            </a>
+            <a href="{{ url_for('logout') }}" class="dropdown-item">
               <i class="ti ti-logout"></i>
               <span>Logout</span>
             </a>
-            {% endif %}
           </div>
         </div>
       </div>
